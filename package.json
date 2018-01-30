@@ -1,0 +1,29 @@
+{
+  "name": "linkbox-mock-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/App.js"
+  },
+  "author": "Linkbox",
+  "license": "MIT",
+  "dependencies": {
+    "@maildots/sdk": "^1.5.6",
+    "@slack/client": "^3.15.0",
+    "body-parser": "^1.18.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "octonode": "^0.9.1",
+    "path": "^0.12.7",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28"
+  },
+  "engines": {
+    "node": "8.1.4"
+  }
+}
