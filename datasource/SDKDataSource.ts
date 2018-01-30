@@ -4,8 +4,6 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: ".env" });
 
 import { SDKRepository } from "../repository/SDKRepository";
-import { InputSet } from '../../maildots-node-sdk/build/model/InputSet';
-
 
 export class SDKDataSource implements SDKRepository
 {
