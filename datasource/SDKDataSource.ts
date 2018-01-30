@@ -22,7 +22,7 @@ export class SDKDataSource implements SDKRepository
 			let msg = new SDK.Message(content).setReceivers([to]).setSubject('Slack-bot')
 			
 			let auth_url = process.env.SLACK_AUTH_URL + state
-      msg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]).setType(SDK.InputSetType.InputKeyboard))
+      msg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]))
       
 			let msgResult = await this.sendingClient.sendMessage(msg);
       return resolve(msgResult);
@@ -41,7 +41,7 @@ export class SDKDataSource implements SDKRepository
         options[o.name] = o.name;
       })
 
-      reponseMsg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]).setType(SDK.InputSetType.InputKeyboard))
+      reponseMsg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]))
 
       let msgResult = await this.sendingClient.sendReply(refMsg, reponseMsg);
       console.log(JSON.stringify(msgResult, null, 2))
@@ -56,7 +56,7 @@ export class SDKDataSource implements SDKRepository
       let msg = new SDK.Message(content).setReceivers([to]).setSubject('Slack-bot')
       let auth_url = process.env.SLACK_AUTH_URL + state
       
-      msg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]).setType(SDK.InputSetType.InputKeyboard))
+      msg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]))
       
       let msgResult = await this.sendingClient.sendMessage(msg);
       return resolve(msgResult);
@@ -78,7 +78,7 @@ export class SDKDataSource implements SDKRepository
         })
       })
 
-      msg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]).setType(SDK.InputSetType.InputKeyboard))
+      msg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]))
 
       let msgResult = await this.sendingClient.sendMessage(msg);
       return resolve(msgResult);
@@ -92,7 +92,7 @@ export class SDKDataSource implements SDKRepository
       let reponseMsg = new SDK.Message(content).setSubject('Slack-bot')
 
       let auth_url = process.env.SLACK_AUTH_URL + state
-      reponseMsg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]).setType(SDK.InputSetType.InputKeyboard))
+      reponseMsg.setInputSet(new SDK.InputSet('log_in', [new SDK.WebView('Log In', auth_url)]))
 
       let msgResult = await this.sendingClient.sendReply(refMsg, reponseMsg);
       return resolve(msgResult);
@@ -113,7 +113,7 @@ export class SDKDataSource implements SDKRepository
         })
       })
 
-      reponseMsg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]).setType(SDK.InputSetType.InputKeyboard))
+      reponseMsg.setInputSet(new SDK.InputSet('channels', [new SDK.ComboBox('Channels', options)]))
       let msgResult = await this.sendingClient.sendReply(refMsg, reponseMsg);
       return resolve(msgResult);
     })
